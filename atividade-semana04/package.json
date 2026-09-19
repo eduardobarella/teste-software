@@ -1,0 +1,17 @@
+{
+  "name": "atividade-semana04-playwright",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Aplicação didática e testes funcionais com Playwright (atividade da semana 04)",
+  "scripts": {
+    "start": "node server.js",
+    "browsers": "PLAYWRIGHT_BROWSERS_PATH=.browsers playwright install chromium",
+    "test": "PLAYWRIGHT_BROWSERS_PATH=.browsers playwright test",
+    "test:headed": "PLAYWRIGHT_BROWSERS_PATH=.browsers playwright test --headed",
+    "test:ui": "PLAYWRIGHT_BROWSERS_PATH=.browsers playwright test --ui",
+    "report": "PLAYWRIGHT_BROWSERS_PATH=.browsers playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.55.0"
+  }
+}
