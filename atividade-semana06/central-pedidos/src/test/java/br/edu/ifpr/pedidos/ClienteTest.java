@@ -4,6 +4,25 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ClienteTest {
-    // TODO: implemente os testes e as asserções descritos no roteiro.
-    // Métodos anotados com @Test serão descobertos pelo Maven.
+
+    @Test
+    void deveGuardarOsValoresInformados() {
+        Cliente cliente = new Cliente(true, false, 3);
+
+        assertAll(
+            () -> assertTrue(cliente.vip()),
+            () -> assertFalse(cliente.bloqueado()),
+            () -> assertEquals(3, cliente.comprasAnteriores())
+        );
+    }
+
+    @Test
+    void deveAceitarHistoricoZero() {
+        assertEquals(0, new Cliente(false, true, 0).comprasAnteriores());
+    }
+
+    @Test
+    void deveRejeitarHistoricoNegativo() {
+        assertThrows(IllegalArgumentException.class, () -> new Cliente(false, false, -1));
+    }
 }
